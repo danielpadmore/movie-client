@@ -2,7 +2,7 @@
   "name": "@danielpadmore/movie-db-client",
   "version": "0.0.1",
   "main": "dist/index.js",
-  "repository": "git@github.com:danielpadmore/movie-search-client.git",
+  "repository": "git@github.com:danielpadmore/movie-db-client.git",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -22,5 +22,10 @@
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.7.0"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.5.4",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0"
   }
 }

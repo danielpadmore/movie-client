@@ -1,1 +1,2 @@
-export const addOne = (value: number) => value + 1;
+export { default as MovieClient } from "./movie-client";
+export { default as MovieDBClient } from "./movie-db-client";
