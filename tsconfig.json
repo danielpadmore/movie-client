@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "lib": ["es2017"],
+    "moduleResolution": "node",
+    "module": "commonJS",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "es2017",
+    "typeRoots": ["src/@types", "node_modules/@types"]
+  },
+  "include": ["src/**/*"]
+}

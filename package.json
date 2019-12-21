@@ -1,0 +1,26 @@
+{
+  "name": "@danielpadmore/movie-db-client",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "repository": "git@github.com:danielpadmore/movie-search-client.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "author": "Daniel Padmore",
+  "license": "UNLICENCED",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.22",
+    "@types/node": "^12.11.1",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.7.0"
+  }
+}

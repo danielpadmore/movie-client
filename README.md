@@ -1,2 +1,2 @@
-# movie-search-client
-Client to the Movie Search DB https://www.themoviedb.org
+# movie-db-client
+Client to the Movie DB https://www.themoviedb.org
