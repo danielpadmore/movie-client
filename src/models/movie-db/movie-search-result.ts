@@ -16,8 +16,8 @@ type MovieSearchResult = {
 };
 
 export interface MovieDBSearchResults {
-  page: 1;
-  total_results: 530;
-  total_pages: 27;
+  page: number;
+  total_results: number;
+  total_pages: number;
   results: MovieSearchResult[];
 }
