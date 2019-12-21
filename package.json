@@ -1,8 +1,8 @@
 {
-  "name": "@danielpadmore/movie-db-client",
+  "name": "@danielpadmore/movie-client",
   "version": "0.0.1",
   "main": "dist/index.js",
-  "repository": "git@github.com:danielpadmore/movie-db-client.git",
+  "repository": "git@github.com:danielpadmore/movie-client.git",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
