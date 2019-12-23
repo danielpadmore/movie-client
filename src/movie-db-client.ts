@@ -20,8 +20,13 @@ export default class MovieDBClient implements MovieClient {
       headers: this.defaultHeaders
     });
     const response: MovieDBSearchResults = await request.json();
-    const movies = parseMovieSearchResults(response);
-    return movies;
+    if (request.status === 200) {
+      return parseMovieSearchResults(response);
+    } else if (response.status_message) {
+      throw { message: response.status_message };
+    } else {
+      throw { message: "Unexpected error" };
+    }
   }
 }
 
@@ -39,8 +44,12 @@ export function parseMovieSearchResults(
   return searchResults.results.map(
     (result): Movie => ({
       id: result.id,
-      posterUrl: result.poster_path,
-      backdropUrl: result.backdrop_path,
+      posterUrl: result.poster_path
+        ? "https://image.tmdb.org/t/p/w500/" + result.poster_path
+        : "",
+      backdropUrl: result.backdrop_path
+        ? "https://image.tmdb.org/t/p/w500/" + result.backdrop_path
+        : "",
       popularity: result.popularity,
       voteCount: result.vote_count,
       adult: result.adult,
