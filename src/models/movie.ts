@@ -8,8 +8,8 @@ export interface Movie {
   adult: boolean;
   title: string;
   originalTitle: string;
-  genre_ids: number[];
+  genreIds: number[];
   voteAverage: number;
   overview: string;
-  release_date: string;
+  releaseDate: string;
 }
