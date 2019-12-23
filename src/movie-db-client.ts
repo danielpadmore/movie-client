@@ -9,20 +9,16 @@ const BASE_URL = "https://api.themoviedb.org/3";
 // TODO: Abstract the fetch implementation to be injected by consumer
 export default class MovieDBClient implements MovieClient {
   constructor(
-    private readonly ACCESS_TOKEN: string,
-    private fetchClient: FetchClient // If we wanted to make this client work server side we'd need an isomorphic fetch client to be injected
+    private readonly ACCESS_TOKEN: string // private fetchClient: FetchClient // If we wanted to make this client work server side we'd need an isomorphic fetch client to be injected
   ) {}
 
   private defaultHeaders = { Authorization: `Bearer ${this.ACCESS_TOKEN}` };
 
   async searchAllMovies(query: string): Promise<Movie[]> {
-    const request = await this.fetchClient(
-      `${BASE_URL}/search/movie?query=${query}`,
-      {
-        method: "GET",
-        headers: this.defaultHeaders
-      }
-    );
+    const request = await fetch(`${BASE_URL}/search/movie?query=${query}`, {
+      method: "GET",
+      headers: this.defaultHeaders
+    });
     const response: MovieDBSearchResults = await request.json();
     const movies = parseMovieSearchResults(response);
     return movies;
@@ -50,10 +46,10 @@ export function parseMovieSearchResults(
       adult: result.adult,
       title: result.title,
       originalTitle: result.original_title,
-      genre_ids: result.genre_ids,
+      genreIds: result.genre_ids,
       voteAverage: result.vote_average,
       overview: result.overview,
-      release_date: result.release_date
+      releaseDate: result.release_date
     })
   );
 }
