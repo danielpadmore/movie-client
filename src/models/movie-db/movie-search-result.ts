@@ -20,4 +20,5 @@ export interface MovieDBSearchResults {
   total_results: number;
   total_pages: number;
   results: MovieSearchResult[];
+  status_message?: string;
 }
